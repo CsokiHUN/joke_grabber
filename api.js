@@ -12,16 +12,18 @@ const jokes = {
 async function loadJokes() {
     const data = await fs.readJson('jokes.json');
     for await (const element of Object.entries(data)) {
-        jokes.all.push(element[1]);
-
-        let typ = element[1].typ;
-        if (typ && typ.length > 0) {
-            typ = typ.toLowerCase();
-            if (!jokes.byType.typ) {
-                jokes.byType.typ = [];
+        if (element[1].text.length > 0) {
+            jokes.all.push(element[1]);
+    
+            let typ = element[1].typ;
+            if (typ && typ.length > 0) {
+                typ = typ.toLowerCase();
+                if (!jokes.byType.typ) {
+                    jokes.byType.typ = [];
+                }
+    
+                jokes.byType.typ.push(element[1]);
             }
-
-            jokes.byType.typ.push(element[1]);
         }
     }
 
