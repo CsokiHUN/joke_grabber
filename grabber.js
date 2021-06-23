@@ -32,7 +32,10 @@ const grab = (callback) => {
         }
     }, 1000)
 }
+
 grab((data) => {
     fs.writeJSON('jokes.json', data, { spaces: '\t' });
     console.log('saved to: jokes.json');
 })
+
+
