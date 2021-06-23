@@ -49,8 +49,8 @@ app.get('/random', (req, res) => {
     res.json(jokes.all[index]);
 })
 
-function init() {
-    loadJokes();
+async function init() {
+    await loadJokes();
     app.listen(PORT);
     console.log(`App started, port: ${PORT}`);
 }
