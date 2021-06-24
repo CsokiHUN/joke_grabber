@@ -2,7 +2,11 @@ const PORT = 8080;
 
 const express = require('express');
 const fs = require('fs-extra');
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors());
 
 const jokes = {
     all: [],

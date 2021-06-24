@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap.native@3.0.15/dist/bootstrap-native-v4.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    <div id="app">
+        <div v-if="loading" class="loading text-center">
+            <i class="fas fa-circle-notch"></i>
+        </div>
+
+        <div v-if="!loading" class="joke">
+            <h3 class="title">{{ title }}</h3>
+            <p class="typ ml-2">{{ typ }}</p>
+            <h6 class="text" v-html="joke"></h6>
+        </div>
+
+        <button class="btn btn-secondary new" @click="fetchJoke">New Joke</button>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,39 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(10, 10, 10);
+    color: rgb(150, 150, 150);
+}
+
+#app {
+    width: 50vw;
+}
+
+.loading {
+    font-size: 2rem;
+}
+.loading > i {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.joke > .title {
+    text-decoration: underline;
+    text-decoration-color: rgb(100, 100, 100);
+}
+.joke > .typ {
+    font-size: 0.8rem;
+}
+.joke > .text {
+    line-height: 2rem;
+}
+
+.new {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vh;
+}
